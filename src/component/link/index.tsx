@@ -14,11 +14,10 @@ function Link() {
       console.log(shorturl);
       try {
         const data = await getDocs(q);
-        console.log(shorturl, data);
 
-        // if (data.empty) {
-        //   return navigate("/");
-        // }
+        if (data.empty) {
+          return navigate("/");
+        }
         const resData = data.docs[0].data();
         window.location.replace(resData.url);
       } catch (error) {
