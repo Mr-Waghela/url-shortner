@@ -10,7 +10,7 @@ function Home() {
   const [Modal, setModal] = useState(false);
 
   let gen = shortid.generate();
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const urlsCollection = collection(db, "urls");
     await addDoc(urlsCollection, {

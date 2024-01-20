@@ -4,10 +4,7 @@ import { db } from "../../config";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 function Link() {
-  interface ParamTypes {
-    shorturl: string;
-  }
-  const { shorturl } = useParams<ParamTypes>();
+  const { shorturl } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
