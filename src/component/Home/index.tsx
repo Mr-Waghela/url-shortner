@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../config/index";
-import "./Home.scss";
+import "./home.scss";
 import * as shortid from "shortid";
 
 // Assuming db is initialized somewhere else using initializeApp
