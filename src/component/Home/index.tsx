@@ -8,14 +8,16 @@ import * as shortid from "shortid";
 function Home() {
   const [url, setUrl] = useState("");
   const [Modal, setModal] = useState(false);
+  const [gen, setGen] = useState("");
 
-  let gen = shortid.generate();
   const handleFormSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const urlsCollection = collection(db, "urls");
+    let genValue = shortid.generate();
+    setGen(genValue);
     await addDoc(urlsCollection, {
       url: url,
-      code: gen,
+      code: genValue,
     });
     setModal(true);
     // alert("This is your URL -" + window.location + gen);
